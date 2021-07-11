@@ -1,15 +1,6 @@
 // Author : tawfik shalash
-//link:https://codeforces.com/group/iLimysjd4B/contest/326525/problem/D
-
-/*
-
-3 3
-5 2 4
-1 3 5
-9 2 7
 
 
-*/
 #include <vector>
 #include <list>
 #include <map>
