@@ -1,0 +1,13 @@
+lcm(a,b)=|a.b|/gcd(a,b)
+===================================================
+prime factor of 180 is 5 , 3 ,3 , 2 , 2
+prime factor of 48 is 3 , 2 , 2 , 2 ,2 
+
+gcd of 180 ,48 is 3 *2* 2= 12
+
+===================================================
+======Euclid's algorithm============
+given two positive integer a and b such that a>b 
+the common divisors of a and b are the same 
+as the common divisors of a-b and b
+gcd(a,b)==gcd(a-b,b)  as a>b
