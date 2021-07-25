@@ -1,30 +1,40 @@
-********************pointer*************************
-
-0x62fd3c
-0x62fd3c
-6
-6
-********************iterator*************************
-
- iterator point to v.begin() 1
- iterator after next(it,1) = 2
- iterator after prev(it,1) = 1
- iterator after advance(it,3)= 4
-**************iterate to print the vector**************
+888888888888 display the vector elements 8888888888888
 
 1
 2
 3
 4
 5
-**************insert**************
+12
+23
+44
+888888888888 return sizes 8888888888888
+
+the vector size is 8
+the vector capacity in memory now 10
+the vector max size 4611686018427387903
+888888888888 insert elements 8888888888888
 
 1
 2
 3
-10
-20
-30
-40
 4
 5
+12
+23
+44
+100
+200
+888888888888 erase 8888888888888
+
+12
+23
+44
+100
+200
+888888888888 swap 8888888888888
+
+100
+100
+100
+100
