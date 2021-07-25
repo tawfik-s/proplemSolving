@@ -17,38 +17,18 @@ int main()
 freopen("in.txt","r",stdin);
 freopen("out.txt","w",stdout);
 #endif
-cout<<"********************pointer*************************\n"<<endl;
 
-int n=5;
-int *ptr=&n;
-n=6;
-cout<<ptr<<endl;
-cout<<&n<<endl;
-cout<<*ptr<<endl;
-cout<<n<<endl;
+vector<int> v;   //empty vector of int
+vector<int> v2(4,100);  //set 4 ints with value 100
+vector<int>v3(v2.begin(),v2.end()); //iterate around v2 to copy data to v3
+vector<int>v4(v3); //copy all data in v3 into v4
 
+int myints[]={1,2,3,4,5};
 
-cout<<"********************iterator*************************\n"<<endl;
-vector<int>v ={1,2,3,4,5};
-
-vector<int>::iterator it= v.begin();
-
-cout<<" iterator point to v.begin() "<<*it<<endl;
-it=next(it,1);
-cout<<" iterator after next(it,1) = "<<*it<<endl;
-it=prev(it,1);
-cout<<" iterator after prev(it,1) = "<<*it<<endl;
-advance(it,3);
-cout<<" iterator after advance(it,3)= "<<*it<<endl;
+vector<int>v5(myints,myints+5);
 
 
 
-
-cout<<"**************iterate to print the vector**************\n"<<endl;
-for(vector<int>::iterator it=v.begin();it!=v.end();it++)   //iterate arount the elments using iterator
-{
-    cout<<*it<<endl;
-}
 
 
     return 0;

@@ -50,6 +50,18 @@ for(vector<int>::iterator it=v.begin();it!=v.end();it++)   //iterate arount the 
 {
     cout<<*it<<endl;
 }
+cout<<"**************insert**************\n"<<endl;
+vector<int>ar={1,2,3,4,5};
+vector<int>ar1={10,20,30,40};
+vector<int>::iterator ptr1=ar.begin();
+advance(ptr1,3);
+copy(ar1.begin(),ar1.end(),inserter(ar,ptr1));
+
+for(auto i:ar)
+{
+    cout<<i<<endl;
+}
+
 
 
     return 0;
