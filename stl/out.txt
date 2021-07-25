@@ -1,0 +1,4 @@
+ iterator point to v.begin() 1
+ iterator after next(it,1) = 2
+ iterator after prev(it,1) = 1
+ iterator after advance(it,3)= 4
