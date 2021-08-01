@@ -8,7 +8,24 @@
 #include<bits/stdc++.h>
 
 using namespace std;
+vector<string>v;
+int k,j;
 
+int dfs(int x,int y)
+{
+    if(x>=k||y>=j||0>y||0>x||v[y][x]=='0')
+    {
+        return 0;
+    }
+
+    int sum=1;
+    v[y][x]=0;
+    sum=dfs(x,y+1)+dfs(x+1,y)+dfs(x+1,y+1)+dfs(x-1,y-1);
+    
+
+    return sum;
+
+}
 
 int main()
 {
@@ -18,8 +35,28 @@ freopen("in.txt","r",stdin);
 freopen("out.txt","w",stdout);
 #endif
 
+string s;
+int n=5;
+while(n--)
+{
+    cin>>s;
+    v.push_back(s);
+}
 
-cout<<"hellow world"<<endl;
+k=v[0].size();
+j=v.size();
+int maxx=0;
+for(int i=0;i<k;i++)
+{
+    for(int ii=0;ii<j;ii++)
+    {
+        maxx=max(maxx,dfs(i,ii));
+    }
+}
+
+cout<<maxx;
+
+
 
 
     return 0;
