@@ -22,12 +22,7 @@ typedef unsigned long long ull;
 typedef vector<int> vi;
 typedef vector<ll> vll;
 
-unsigned int factorial(unsigned int n)
-{
-    if (n == 0)
-        return 1;
-    return n * factorial(n - 1);
-}
+
 
 int main() {
 
@@ -37,30 +32,9 @@ int main() {
     freopen("out.txt","w",stdout);
 #endif
 
-int n,m,k;
-cin>>n>>m>>k;
-vector<int>v;
-vector<int>pro;
-v.resize(n);
 
-for(int i=0;i<n;i++)
-{
-    cin>>v[i];
-}
 
-for(int i=1;i<n;i++)
-{
-    pro.push_back((v[i]-v[i-1]));
-}
 
-sort(pro.begin(),pro.end());
-int sum=0;
-for(int i=0;i<pro.size()-k+1;i++)
-{
-    sum+=pro[i];
-}
-sum+=k;
-cout<<sum;
 
 
     return 0;
