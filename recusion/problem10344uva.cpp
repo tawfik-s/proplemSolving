@@ -72,7 +72,6 @@ int main() {
             if(solve(1,nums[0]))
             {
                 cout<<"Possible"<<endl;         flag=true;
-
                 break;
             }
 
