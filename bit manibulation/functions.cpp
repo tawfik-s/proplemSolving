@@ -38,14 +38,13 @@ bool isPowerOfTwo(int x)
     {
         // x will check if x == 0 and !(x & (x - 1)) will check if x is a power of 2 or not
         return (x && !(x & (x - 1)));
-
         // x-1 will return the 01111 if number is 10000
         // x and x-1  will return 0 if true; 
         //!0 will return 1  && x= x  mean return true;
     }
 
 //count the number of ones in the binary representation of the given number
-
+    //  __
     int count_one (int n)
         {
             int count=0;
@@ -87,6 +86,7 @@ void possible_subsets(vector<char>v)
     {
         for(int j=0;j<N;++j)
         {
+         if(i & (1 << j))
              cout<<v[j]<<' ';
              
         }
