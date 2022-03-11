@@ -1,0 +1,76 @@
+#include <bits.stdc++.h>
+using namespace std;
+
+bool solution(vector<int> &A, int Y, int Z)
+{
+    // bruteforce
+    int numberOfPeople = A.size() / Y;
+    vector<int> people(numberOfPeople, 0);
+    iota(people.begin(), people.end(), 1);
+
+    do
+    {
+        vector<bool> final(Y, false);
+        for (int i = 0; i < Z; i++)
+        {
+            int start = people[i] * Y;
+            for (int j = 0; j < Y; j++)
+            {
+                if (A[start + j] == 1)
+                    final[j] = true;
+            }
+        }
+        bool flag = true;
+        for (auto x : final)
+        {
+            if (x == false)
+            {
+                flag = false;
+                break;
+            }
+        }
+
+        if (flag)
+            return true;
+    } while (next_permutation(people.begin(), people.end()));
+
+    return false;
+}
+
+vector<int> solution(vector<int> &A)
+{
+    // sort(A.begin(),A.end());
+    map<int, int> mp;
+    for (int i = 0; i < A.size(); i++)
+    {
+        mp[A[i]]++;
+    }
+    vector<pair<int, int>> tempres;
+    for (auto x : mp)
+    {
+        // int num = x.first;
+        // int times = x.second;
+        if (x.second == 0)
+        {
+            continue;
+        }
+        if (mp[2 * x.first] >= x.second)
+        {
+            mp[2 * x.first] -= x.second;
+            mp[x.first] = 0; // x.second
+            tempres.push_back({x.first, x.second});
+        }
+        else
+        {
+            return {};
+        }
+    }
+    vector<int> res;
+    for (auto x : tempres)
+    {
+        for (int i = 0; i < x.second; i++)
+        {
+            res.push_back(x.first);
+        }
+    }
+}
