@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
-#define FIO                       \
-    ios_base::sync_with_stdio(0); \
-    cin.tie(0);
+
 using namespace std;
 typedef long long ll;
 
@@ -58,18 +56,47 @@ ll popFront(ll h, ll xp, ll p, char ch)
 
 int main()
 {
-    FIO
-        //    freopen("input.txt","rt",stdin);
-        //    freopen("output.txt","wt",stdout);
-        int x = 128,
-            p1 = 1e9 + 7, p2 = 1e9 + 9;
+    ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
 
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+#ifdef ONLINE_JUDGE
+
+#endif
+
+    int x = 128, x2 = 133, p1 = 1e9 + 7, p2 = 1e9 + 9;
     vector<ll> XP1(1e5 + 1), XP2(1e5 + 1);
     XP1[0] = XP2[0] = 1;
     for (int i = 1; i <= 100000; i++)
     {
         XP1[i] = (XP1[i - 1] * x) % p1;
-        XP2[i] = (XP2[i - 1] * x) % p2;
+        XP2[i] = (XP2[i - 1] * x2) % p2;
+    }
+
+    string s;
+    while (true)
+    {
+        s = "sbbabba";
+        int h1f = 0, h2f = 0, h1l = 0, h2l = 0;
+        int n = s.length();
+        int f = n;
+        for (int i = n - 1; i >= 0; i--)
+        {
+            h1f = pushBack(h1f, x, p1, s[i]);
+            h2f = pushBack(h2f, x2, p2, s[i]);
+            h1l = pushFront(h1l, XP1[n - i - 1], p1, s[i]);
+            h2l = pushFront(h2l, XP2[n - i - 1], p2, s[i]);
+
+            if (h1f == h1l && h2l == h2f)
+            {
+                f = i;
+            }
+        }
+        string last = s.substr(0, f);
+        reverse(last.begin(), last.end());
+        cout << s << last << endl;
     }
 
     return 0;
