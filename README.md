@@ -1,5 +1,5 @@
 # proplemSolving
-some of my problem solutions
+some of my problem solutions and important algorithms code
 
 
 
