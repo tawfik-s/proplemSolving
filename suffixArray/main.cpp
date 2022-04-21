@@ -160,6 +160,7 @@ void buildSuffixArray()
                 continue;
             newSuf[groupStart[group[j]]++] = j;
         }
+
         for (int i = 1; i < n; i++)
         { // compute the 2h group data given h group data
             bool newgroup = group[newSuf[i - 1]] < group[newSuf[i]] || (group[newSuf[i - 1]] == group[newSuf[i]] && group[newSuf[i - 1] + h] < group[newSuf[i] + h]);
