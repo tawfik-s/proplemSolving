@@ -23,7 +23,7 @@ int solve(int i, int j)
     if (a[i] == b[j])
     {
 
-        res = max({solve(i + 1, j + 2), solve(i + 2, j + 1), solve(i + 1, j + 1)}) + 1;
+        res = solve(i + 1, j + 1) + 1;
     }
     else
     {
