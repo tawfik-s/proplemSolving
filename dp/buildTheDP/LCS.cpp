@@ -44,15 +44,7 @@ string build(int i, int j)
     if (a[i] == b[j])
     {
 
-        if (solve(i + 1, j + 2) + 1 == dp[i][j])
-        {
-            res = build(i + 1, j + 2);
-        }
-        else if (solve(i + 2, j + 1) + 1 == dp[i][j])
-        {
-            res = build(i + 2, j + 1);
-        }
-        else if (solve(i + 1, j + 1) + 1 == dp[i][j])
+        if (solve(i + 1, j + 1) + 1 == dp[i][j])
         {
             res = build(i + 1, j + 1);
         }
